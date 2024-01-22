@@ -1,5 +1,7 @@
 <ul>
     <li>{{ carte.titre }}</li>
     <li>{{ carte.description }}</li>
-    <li>{{ carte.commentaires }}</li>
+    <div class="affichageCommentaire" *ngFor="let commentaire of commentaires">
+        <app-commentaire [commentaire]="commentaire"></app-commentaire>
+    </div>
 </ul>
