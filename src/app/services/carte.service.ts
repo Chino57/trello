@@ -28,6 +28,10 @@ export class CarteService {
     return this.http.get(`http://localhost:3000/cartes/${id}`)
   }
 
+  getCartesByListesId(idListe: string) {
+    return this.http.get(`http://localhost:3000/cartes?idListe=${idListe}`)
+  }
+
   createCarte(carte: any) {
     return this.http.post(`http://localhost:3000/cartes`, carte)
   }

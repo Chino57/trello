@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Liste, ListeService } from "../../services/liste.service";
-import { Carte, CarteService } from 'src/app/services/carte.service';
 
 @Component({
   selector: 'app-liste',
@@ -10,11 +9,10 @@ import { Carte, CarteService } from 'src/app/services/carte.service';
 export class ListeComponent implements OnInit {
 
   listes!: Liste[];
-  cartes!: Carte[];
-
+  @Input()liste!:Liste;
+  
   constructor(
-    public listeService: ListeService, 
-    public carteService: CarteService ) { }
+    public listeService: ListeService) { }
 
 
   ngOnInit(){

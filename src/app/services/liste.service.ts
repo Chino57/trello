@@ -26,8 +26,8 @@ export class ListeService {
     return this.http.get(`http://localhost:3000/liste/${id}`)
   }
 
-  getListesByProjectId(projectId: string) {
-    return this.http.get(`http://localhost:3000/liste?projectId=${projectId}`)
+  getListesByProjectId(idProjet: string) {
+    return this.http.get(`http://localhost:3000/liste?idProjet=${idProjet}`)
   }
 
   createListe(liste: any) {

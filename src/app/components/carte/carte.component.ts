@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Carte, CarteService } from "../../services/carte.service";
+import { Liste, ListeService } from 'src/app/services/liste.service';
 
 @Component({
   selector: 'app-carte',
@@ -8,13 +9,27 @@ import { Carte, CarteService } from "../../services/carte.service";
 })
 export class CarteComponent implements OnInit {
 
-  constructor(private carteService: CarteService) { }
-  cartes! : Carte[];
+  cartes!: Carte[];
+  carte!: Carte;
+  liste! : Liste[];
+  actualList!: Liste;
+  
+  constructor(public carteService: CarteService,
+              public listeService: ListeService) { }
+
+  displayCard(liste: Liste) {
+    this.actualList = liste
+    this.carteService
+        .getCartesByListesId(liste.id)
+        .subscribe((cartes: any) => {
+          this.cartes = cartes;
+          console.log(this.cartes)    
+        })
+  }
+  
   
   ngOnInit(){
-        this.carteService.getCartes().subscribe((cartes: any) => {
-        this.cartes = cartes;
-        console.log(this.cartes);
-      })
-    }
-  }
+    this.displayCard(this.liste[0])
+    
+  };
+}

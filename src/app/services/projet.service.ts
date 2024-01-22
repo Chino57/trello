@@ -14,11 +14,11 @@ export interface Projet {
 })
 export class ProjetService {
 
-  Projets = [];
+  projets = [];
 
   constructor(private http: HttpClient) {}
   getProjets() {
-    return this.http.get("http://localhost:5136/api/Projet")
+    return this.http.get("http://localhost:3000/projets")
   }
 
   getProjet(id: string) {

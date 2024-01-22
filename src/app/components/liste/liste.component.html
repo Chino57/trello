@@ -1,6 +1,5 @@
-<p>liste works!</p>
-<ul *ngFor="let liste of listes">
-    <li>{{ liste.nom }}</li>
-    <li><app-carte></app-carte></li>
-    <li>{{ liste.projet }} </li>
+<ul>
+    <li>{{ this.liste.nom }}</li>
+        <app-carte></app-carte>
+        <li>{{ this.liste.projet }}</li>
 </ul>

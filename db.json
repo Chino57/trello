@@ -7,7 +7,7 @@
             "dateCreation": "14/06/2022",
             "idListe": "3",
             "commentaires": "Listes des commentaires correspondants",
-            "liste": "Listes de taches correspondantes"
+            "liste": "Tâches importantes"
         },
         {
             "id": "2",
@@ -16,7 +16,7 @@
             "dateCreation": "13/05/2022",
             "idListe": "3",
             "commentaires": "Listes des commentaires correspondants",
-            "liste": "Listes de taches correspondantes"
+            "liste": "Tâches importantes"
         },
         {
             "id": "3",
@@ -25,7 +25,7 @@
             "dateCreation": "11/05/2022",
             "idListe": "3",
             "commentaires": "Listes des commentaires correspondants",
-            "liste": "Listes de taches correspondantes"
+            "liste": "Tâches importantes"
         }
     ],
 
@@ -59,21 +59,21 @@
             "nom": "taches importantes",
             "idProjet": "1",
             "cartes": "liste de cartes correspondantes",
-            "projet": "Nom du projet correspondant"
+            "projet": "MégaJeu"
         },
         {
             "id": "2",
             "nom": "taches secondaires",
             "idProjet": "1",
             "cartes": "listes de cartes correspondantes",
-            "projet": "Nom du projet correspondant"
+            "projet": "MégaJeu"
         },
         {
             "id": "3",
             "nom": "taches importantes",
             "idProjet": "2",
             "cartes": "Listes de cartes correspondantes",
-            "projet": "Nom du projet correspondant"
+            "projet": "Logiciel Révolutionnaire IA"
         }
     ],
     "commentaires" : [
