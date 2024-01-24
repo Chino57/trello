@@ -1,3 +1,7 @@
 li {
     font-family: "Sue Ellen Francisco", cursive;
 }
+
+ul {
+    border: thick double salmon;
+}
