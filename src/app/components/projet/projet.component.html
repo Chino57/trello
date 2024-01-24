@@ -1,7 +1,11 @@
 <p>Liste des projets</p>
-<div class="side" *ngFor="let projet of projets">
-    <button (click)="selectProjet(projet)">{{ projet.nom }}</button>
+<div class="container">
+    <div class="side" *ngFor="let projet of projets">
+        <button (click)="selectProjet(projet)">{{ projet.nom }}</button>
+    </div>
 </div>
-<div class="listeTache" *ngFor="let liste of listes">
-    <app-liste [liste]="liste"></app-liste>
-</div>
+    <div class="containerListe">
+        <div class="listeTache" *ngFor="let liste of listes">
+            <app-liste [liste]="liste"></app-liste>
+        </div>
+    </div>
