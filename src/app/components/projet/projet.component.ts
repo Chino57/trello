@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProjetService, Projet } from "../../services/projet.service";
 import { Liste, ListeService } from 'src/app/services/liste.service';
 
@@ -14,6 +14,7 @@ export class ProjetComponent implements OnInit {
   actualProjet!: Projet;
   listes! : Liste[];
   liste!: Liste;
+  @Input()projet!: string;
   
   constructor(
     public projetServices: ProjetService,
@@ -37,4 +38,17 @@ export class ProjetComponent implements OnInit {
     })
   }
 
+  sendProjet() {
+    this.projetServices
+        .createProjet({
+          nom: this.projet,
+          description: "Un nouveau super projet",
+          dateCreation: "26/01/2024",
+          liste: "Listes de tache à effectuer"
+        })
+        .subscribe((projet: any) => {
+          this.projets.push(projet);
+          this.projet = "";
+        });
+  }
 }

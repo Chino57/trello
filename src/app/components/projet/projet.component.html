@@ -2,6 +2,15 @@
     <div class="side" *ngFor="let projet of projets">
         <button (click)="selectProjet(projet)">{{ projet.nom }}</button>
     </div>
+    <form>
+        <input type="text" name="projet" ngModel="this.projet" />
+        <button (click)="this.sendProjet()">Créer projet</button>
+
+    </form>
     <div class="listeTache" *ngFor="let liste of listes">
         <app-liste [liste]="liste"></app-liste>
     </div>
+    <form>
+        <input type="text" name="liste">
+        <button>Créer liste</button>
+    </form>
