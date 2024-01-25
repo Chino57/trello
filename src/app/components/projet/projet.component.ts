@@ -46,7 +46,7 @@ export class ProjetComponent implements OnInit {
   sendProjet() {
     this.projetServices
         .createProjet({
-          id: "4",
+          id: "5",
           nom: this.projet,
           description: "Un nouveau super projet",
           dateCreation: "26/01/2024",
@@ -61,11 +61,11 @@ export class ProjetComponent implements OnInit {
   sendList() {
     this.listeService
         .createListe({
-          id: "4",
+          id: "5",
           nom : this.newListe,
-          idProjet: "3",
+          idProjet: "5",
           cartes: "liste de carte correspondantes",
-          projet: "construction maison"
+          projet: "mon projet super cool"
         })
         .subscribe((nouvelleListe: any) => {
           this.listes.push(nouvelleListe);
@@ -75,11 +75,11 @@ export class ProjetComponent implements OnInit {
   sendCard() {
       this.carteService
         .createCarte({
-          id: "4",
+          id: "5",
           titre: this.newCarte,
-          description: "Création des plans de la maison",
+          description: "création du schéma de mon site",
           dateCreation: "26/01/2024",
-          idListe: "4",
+          idListe: "5",
           liste: "Tâches importantes" 
         })
         .subscribe((nouvelleCarte: any) => {
