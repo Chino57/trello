@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProjetService, Projet } from "../../services/projet.service";
 import { Liste, ListeService } from 'src/app/services/liste.service';
+import { Carte, CarteService } from 'src/app/services/carte.service';
 
 
 @Component({
@@ -14,11 +15,15 @@ export class ProjetComponent implements OnInit {
   actualProjet!: Projet;
   listes! : Liste[];
   liste!: Liste;
+  cartes!: Carte[]
   @Input()projet!: string;
+  @Input()newListe!: string;
+  @Input()newCarte!: string;
   
   constructor(
     public projetServices: ProjetService,
-    public listeService : ListeService) { }
+    public listeService : ListeService,
+    public carteService: CarteService) { }
 
   selectProjet(projet: Projet) {
     this.actualProjet = projet;
@@ -41,14 +46,45 @@ export class ProjetComponent implements OnInit {
   sendProjet() {
     this.projetServices
         .createProjet({
+          id: "4",
           nom: this.projet,
           description: "Un nouveau super projet",
           dateCreation: "26/01/2024",
           liste: "Listes de tache à effectuer"
         })
-        .subscribe((projet: any) => {
-          this.projets.push(projet);
+        .subscribe((nouveauProjet: any) => {
+          this.projets.push(nouveauProjet);
           this.projet = "";
+        });
+  }
+
+  sendList() {
+    this.listeService
+        .createListe({
+          id: "4",
+          nom : this.newListe,
+          idProjet: "3",
+          cartes: "liste de carte correspondantes",
+          projet: "construction maison"
+        })
+        .subscribe((nouvelleListe: any) => {
+          this.listes.push(nouvelleListe);
+          this.newListe = "";
+        });
+  }
+  sendCard() {
+      this.carteService
+        .createCarte({
+          id: "4",
+          titre: this.newCarte,
+          description: "Création des plans de la maison",
+          dateCreation: "26/01/2024",
+          idListe: "4",
+          liste: "Tâches importantes" 
+        })
+        .subscribe((nouvelleCarte: any) => {
+          this.cartes.push(nouvelleCarte);
+          this.newCarte = "";
         });
   }
 }

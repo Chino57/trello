@@ -5,3 +5,7 @@
         <app-commentaire [commentaire]="commentaire"></app-commentaire>
     </div>
 </ul>
+<form>
+    <input type="text" [(ngModel)]="newComs" name="newComs">
+    <button (click)="this.sendComs()">Ajouter un commentaire</button>
+</form>

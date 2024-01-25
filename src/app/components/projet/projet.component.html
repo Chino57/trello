@@ -3,7 +3,7 @@
         <button (click)="selectProjet(projet)">{{ projet.nom }}</button>
     </div>
     <form>
-        <input type="text" name="projet" ngModel="this.projet" />
+        <input type="text" name="projet" placeholder="Entrez le nom du projet" [(ngModel)]="projet" />
         <button (click)="this.sendProjet()">Créer projet</button>
 
     </form>
@@ -11,7 +11,11 @@
         <app-liste [liste]="liste"></app-liste>
     </div>
     <form>
-        <input type="text" name="liste">
-        <button>Créer liste</button>
+        <input type="text" name="liste" [(ngModel)]="newListe" placeholder="Entrez le nom de la liste">
+        <button (click)="this.sendList()">Créer liste</button>
+    </form>
+    <form>
+        <input type="text" name="newCarte" [(ngModel)]="newCarte" placeholder="Ajouter une nouvelle carte"/>
+        <button (click)="this.sendCard()">Créér une carte</button>
     </form>
     

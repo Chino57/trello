@@ -15,6 +15,7 @@ export class CarteComponent implements OnInit {
   @Input()carte!: Carte;
   actualCarte!: Carte;
   commentaires!: Commentaire[];
+  @Input()newComs!: string;
   
   constructor(public carteService: CarteService,
               public commentaireService: CommentaireService) { }
@@ -37,4 +38,22 @@ export class CarteComponent implements OnInit {
         this.displayComs(this.carte)
       })
     }
+
+    sendComs() {
+      this.commentaireService
+        .createCom({
+          id: "4",
+          contenu: this.newComs,
+          dateCreation: "26/01/2024",
+          idCarte: "4",
+          utilisateur: "Hugues",
+          carte: "Plan de la maison" 
+        })
+        .subscribe((nouveauCom: any) => {
+          this.commentaires.push(nouveauCom);
+          this.newComs = "";
+        });
+  }
+
+    
     }
