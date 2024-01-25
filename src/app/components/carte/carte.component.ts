@@ -42,12 +42,11 @@ export class CarteComponent implements OnInit {
     sendComs() {
       this.commentaireService
         .createCom({
-          id: "5",
           contenu: this.newComs,
           dateCreation: "26/01/2024",
-          idCarte: "5",
+          idCarte: this.actualCarte.id,
           utilisateur: "Alexandre",
-          carte: "Plan de la maison" 
+          carte: this.actualCarte.titre 
         })
         .subscribe((nouveauCom: any) => {
           this.commentaires.push(nouveauCom);

@@ -5,3 +5,11 @@ li {
 ul {
     border: thick double salmon;
 }
+
+button {
+    background-color: #b3ccff;
+  }
+
+button:hover {
+    background-color: #eeaeca;
+  }
